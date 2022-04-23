@@ -6,3 +6,5 @@
 
 ### Linter test status:
 [![Linter Check](https://github.com/Choolkov/python-project-lvl1/actions/workflows/linter_check.yml/badge.svg)](https://github.com/Choolkov/python-project-lvl1/actions/workflows/linter_check.yml)
+
+[![asciicast](https://asciinema.org/a/LUPOohB59NJdHw6rAm7obEngG.svg)](https://asciinema.org/a/LUPOohB59NJdHw6rAm7obEngG)

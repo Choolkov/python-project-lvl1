@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """Script for brain-even game."""
-from brain_games.even import even_game
+from brain_games.games.even import even_game
 
 
 def main():

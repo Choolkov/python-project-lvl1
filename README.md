@@ -1,3 +1,22 @@
+# Brain games
+Package contain some brain games.
+## Install
+```sh
+curl -sSL https://install.python-poetry.org | python3 -
+poetry install
+make build
+make package-install
+```
+
+### Run games
+```sh
+brain-games
+brain-even 
+brain-calc 
+brain-gcd 
+brain-progression 
+brain-prime
+```
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Choolkov/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Choolkov/python-project-lvl1/actions)
 

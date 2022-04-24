@@ -7,4 +7,4 @@
 ### Linter test status:
 [![Linter Check](https://github.com/Choolkov/python-project-lvl1/actions/workflows/linter_check.yml/badge.svg)](https://github.com/Choolkov/python-project-lvl1/actions/workflows/linter_check.yml)
 
-[![asciicast](https://asciinema.org/a/PKh8u4vePAc2lNvjqFs4nitv7.svg)](https://asciinema.org/a/PKh8u4vePAc2lNvjqFs4nitv7)
+[![asciicast](https://asciinema.org/a/1HgSJFYi2iqn4s8ymDeYvD3T2.svg)](https://asciinema.org/a/1HgSJFYi2iqn4s8ymDeYvD3T2)

@@ -3,7 +3,27 @@
 from random import randint
 
 from brain_games.games.engine import ROUNDS_AMOUNT, game
-from sympy import isprime
+
+
+def isprime(number: int) -> bool:
+    """
+    Predicate for check positive integers for prime numbers.
+
+    Args:
+        number: integer for check
+
+    Returns:
+        bool
+
+    """
+    if number < 2:
+        return False
+    elif number == 2:
+        return True
+    for divisor in range(2, int(number ** 0.5) + 1):
+        if number % divisor == 0:
+            return False
+    return True
 
 
 def prime_game():

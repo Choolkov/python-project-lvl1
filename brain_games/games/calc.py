@@ -3,7 +3,7 @@
 from operator import add, mul, sub
 from random import choice, randint
 
-from brain_games.games.engine import ROUNDS_AMOUNT, game
+from brain_games.engine import ROUNDS_AMOUNT, game
 
 min_number = 1
 max_number = 50

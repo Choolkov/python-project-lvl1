@@ -2,7 +2,7 @@
 
 from random import randint
 
-from brain_games.games.engine import ROUNDS_AMOUNT, game
+from brain_games.engine import ROUNDS_AMOUNT, game
 
 
 def isprime(number: int) -> bool:

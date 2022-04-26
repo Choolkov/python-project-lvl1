@@ -1,21 +1,22 @@
 # Brain games
-Package contain some brain games.
-## Install
+### The package contains several games to train your brain.
+
+## Install package locally
 ```sh
-curl -sSL https://install.python-poetry.org | python3 -
-poetry install
+make poetry-install  # if you have not poetry
+make install  # install enviroment and dependencies
 make build
 make package-install
 ```
 
-### Run games
+## Run games
 ```sh
-brain-games
-brain-even 
-brain-calc 
-brain-gcd 
-brain-progression 
-brain-prime
+brain-games # user welcome message
+brain-calc  # game in which you need to calculate a mathematical expression
+brain-even  # game in which you need check the parity of numbers
+brain-gcd  # game in which you need to calculate the greatest common divisor
+brain-prime  # game in which you need to check if a number is prime
+brain-progression  # game in which you need to find the missing number
 ```
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Choolkov/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Choolkov/python-project-lvl1/actions)

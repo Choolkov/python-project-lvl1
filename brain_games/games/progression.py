@@ -2,7 +2,7 @@
 
 from random import choice, randint
 
-from brain_games.games.engine import ROUNDS_AMOUNT, game
+from brain_games.engine import ROUNDS_AMOUNT, game
 
 
 def sequence_generator(

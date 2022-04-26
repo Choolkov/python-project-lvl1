@@ -2,7 +2,7 @@
 
 from random import randint
 
-from brain_games.games.engine import ROUNDS_AMOUNT, game
+from brain_games.engine import ROUNDS_AMOUNT, game
 
 min_number = 1
 max_number = 20

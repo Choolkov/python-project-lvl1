@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install poetry
-        run: curl -sSL https://install.python-poetry.org | python3 -
+        run: make poetry-install
       - name: Install the project dependencies
-        run: poetry install
+        run: make install
       - name: Run linter check
         run: make lint

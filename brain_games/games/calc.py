@@ -3,15 +3,22 @@
 from operator import add, mul, sub
 from random import choice, randint
 
-from brain_games.engine import ROUNDS_AMOUNT, game
+MAX_NUMBER = 10
 
-min_number = 1
-max_number = 50
+
+def get_rules() -> str:
+    """
+    Return rules of the game.
+
+    Returns:
+        str
+    """
+    return 'What is the result of the expression?.'
 
 
 def calc(expression: str) -> str:
     """
-    Calculate math expressions of two values with plus minus or asterisk signs.
+    Calculate math expressions of two numbers with plus minus or asterisk signs.
 
     Return string of result.
 
@@ -27,17 +34,14 @@ def calc(expression: str) -> str:
     return str(math_signs[sign](int(value1), int(value2)))
 
 
-def calc_game():
-    """Calc game."""
-    rules = 'What is the result of the expression?.'
-    rounds = []
-    for _ in range(ROUNDS_AMOUNT):
-        number1 = str(randint(1, max_number))
-        number2 = str(randint(1, max_number))
-        expression = ' '.join((number1, choice('+-*'), number2))
-        rounds.append((expression, calc(expression)))
-    game(rules, rounds)
+def get_round() -> tuple:
+    """
+    Return round for calc-game.
 
-
-if __name__ == '__main__':
-    calc_game()
+    Returns:
+        tuple: question and right answer
+    """
+    number1 = str(randint(1, MAX_NUMBER))
+    number2 = str(randint(1, MAX_NUMBER))
+    expression = ' '.join((number1, choice('+-*'), number2))
+    return (expression, calc(expression))

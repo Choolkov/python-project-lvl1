@@ -36,7 +36,7 @@ def isprime(number: int) -> bool:
     return True
 
 
-def get_round():
+def get_round() -> tuple:
     """
     Return round for prime-game.
 

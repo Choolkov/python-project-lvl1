@@ -30,7 +30,7 @@ def gcd(value1: int, value2: int) -> int:
     return gcd(value2, value1 % value2) if value2 else value1
 
 
-def get_round():
+def get_round() -> tuple:
     """
     Return round for gcd-game.
 

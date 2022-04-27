@@ -1,8 +1,18 @@
-"""Prime game logic."""
+"""Prime-game logic."""
 
 from random import randint
 
-from brain_games.engine import ROUNDS_AMOUNT, game
+MAX_NUMBER = 50
+
+
+def get_rules() -> str:
+    """
+    Return rules of the game.
+
+    Returns:
+        str
+    """
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def isprime(number: int) -> bool:
@@ -26,17 +36,13 @@ def isprime(number: int) -> bool:
     return True
 
 
-def prime_game():
-    """Prime game."""
-    rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    rounds = []
-    max_number = 50
-    for _ in range(ROUNDS_AMOUNT):
-        number = randint(1, max_number)
-        right_answer = 'yes' if isprime(number) else 'no'
-        rounds.append((str(number), right_answer))
-    game(rules, rounds)
+def get_round():
+    """
+    Return round for prime-game.
 
-
-if __name__ == '__main__':
-    prime_game()
+    Returns:
+        tuple: question and right answer
+    """
+    number = randint(1, MAX_NUMBER)
+    right_answer = 'yes' if isprime(number) else 'no'
+    return (str(number), right_answer)

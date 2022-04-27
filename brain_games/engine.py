@@ -1,5 +1,7 @@
 """Common game logic."""
 
+from types import ModuleType
+
 import prompt
 
 ROUNDS_AMOUNT = 3   # количество раундов
@@ -17,17 +19,17 @@ def get_useraname() -> str:
     return name
 
 
-def game(rules: str, rounds: tuple):
+def game_engine(game: ModuleType) -> str:
     """
     Game engine.
 
     Args:
-        rules: game rules
-        rounds: list of tuples (question, right answer)
+        game: module
     """
     name = get_useraname()
-    print(rules)
-    for question, right_answer in rounds:
+    print(game.get_rules())
+    for _ in range(ROUNDS_AMOUNT):
+        question, right_answer = game.get_round()
         print('Question: {0}'.format(question))
         user_answer = prompt.string('Your answer: ')
         if user_answer == right_answer:

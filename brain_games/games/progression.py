@@ -1,8 +1,18 @@
-"""Progression logic."""
+"""Progression-game logic."""
 
 from random import choice, randint
 
-from brain_games.engine import ROUNDS_AMOUNT, game
+MIN_LENGHT = 5
+
+
+def get_rules() -> str:
+    """
+    Return rules of the game.
+
+    Returns:
+        str
+    """
+    return 'What number is missing in the progression?'
 
 
 def sequence_generator(
@@ -20,25 +30,21 @@ def sequence_generator(
         list
 
     """
-    min_lenght = 5
     start = randint(1, max_start)
     step = randint(1, max_step)
-    stop = start + randint(min_lenght, max_lenght) * step
+    stop = start + randint(MIN_LENGHT, max_lenght) * step
     return list(range(start, stop, step))
 
 
-def progression_game():
-    """Progression game."""
-    rules = 'What number is missing in the progression?'
-    rounds = []
-    for _ in range(ROUNDS_AMOUNT):
-        sequence = list(map(str, sequence_generator()))
-        hided_index = choice(range(len(sequence)))
-        right_answer = sequence[hided_index]
-        sequence[hided_index] = '..'
-        rounds.append((' '.join(sequence), right_answer))
-    game(rules, rounds)
+def get_round() -> tuple:
+    """
+    Return round for progression-game.
 
-
-if __name__ == '__main__':
-    progression_game()
+    Returns:
+        tuple: question and right answer
+    """
+    sequence = list(map(str, sequence_generator()))
+    hidden_index = choice(range(len(sequence)))
+    right_answer = sequence[hidden_index]
+    sequence[hidden_index] = '..'
+    return (' '.join(sequence), right_answer)

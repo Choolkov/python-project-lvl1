@@ -4,16 +4,7 @@ from operator import add, mul, sub
 from random import choice, randint
 
 MAX_NUMBER = 10
-
-
-def get_rules() -> str:
-    """
-    Return rules of the game.
-
-    Returns:
-        str
-    """
-    return 'What is the result of the expression?.'
+RULES = 'What is the result of the expression?.'
 
 
 def calc(expression: str) -> str:
@@ -44,4 +35,4 @@ def get_round() -> tuple:
     number1 = str(randint(1, MAX_NUMBER))
     number2 = str(randint(1, MAX_NUMBER))
     expression = ' '.join((number1, choice('+-*'), number2))
-    return (expression, calc(expression))
+    return expression, calc(expression)

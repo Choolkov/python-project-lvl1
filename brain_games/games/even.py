@@ -2,15 +2,21 @@
 
 from random import randint
 
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
-def get_rules() -> str:
+
+def is_even(number: int) -> bool:
     """
-    Return rules of the game.
+    Predicate for checking integers for parity.
+
+    Args:
+        number: integer
 
     Returns:
-        str
+        bool
+
     """
-    return 'Answer "yes" if the number is even, otherwise answer "no".'
+    return not number % 2
 
 
 def get_round() -> tuple:
@@ -21,5 +27,5 @@ def get_round() -> tuple:
         tuple: question and right answer
     """
     number = randint(1, 100)
-    right_answer = 'no' if number % 2 else 'yes'
-    return (str(number), right_answer)
+    right_answer = 'yes' if is_even(number) else 'no'
+    return str(number), right_answer

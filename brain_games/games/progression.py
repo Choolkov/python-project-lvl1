@@ -2,37 +2,31 @@
 
 from random import choice, randint
 
-MIN_LENGHT = 5
+RULES = 'What number is missing in the progression?'
 
 
-def get_rules() -> str:
-    """
-    Return rules of the game.
-
-    Returns:
-        str
-    """
-    return 'What number is missing in the progression?'
-
-
-def sequence_generator(
-    max_start: int = 30, max_step: int = 5, max_lenght: int = 15,
+def get_random_progression(
+    max_initial_term: int = 30,
+    max_common_difference: int = 5,
+    min_lenght: int = 5,
+    max_lenght: int = 15,
 ) -> list:
     """
-    Generate sequence of integers with random parameters.
+     Return arithmetic progression of integers with random parameters.
 
     Args:
-        max_start: maximal start number
-        max_step: maximal step size
-        max_lenght: maximal lenght of sequence
+        max_initial_term: maximal initial term
+        max_common_difference: maximal common diffirence
+        min_lenght: minimal lenght of the progression
+        max_lenght: maximal lenght of the progression
 
     Returns:
         list
 
     """
-    start = randint(1, max_start)
-    step = randint(1, max_step)
-    stop = start + randint(MIN_LENGHT, max_lenght) * step
+    start = randint(1, max_initial_term)
+    step = randint(1, max_common_difference)
+    stop = start + randint(min_lenght, max_lenght) * step
     return list(range(start, stop, step))
 
 
@@ -43,8 +37,8 @@ def get_round() -> tuple:
     Returns:
         tuple: question and right answer
     """
-    sequence = list(map(str, sequence_generator()))
+    sequence = list(map(str, get_random_progression()))
     hidden_index = choice(range(len(sequence)))
     right_answer = sequence[hidden_index]
     sequence[hidden_index] = '..'
-    return (' '.join(sequence), right_answer)
+    return ' '.join(sequence), right_answer

@@ -3,16 +3,7 @@
 from random import randint
 
 MAX_NUMBER = 30
-
-
-def get_rules() -> str:
-    """
-    Return rules of the game.
-
-    Returns:
-        str
-    """
-    return 'Find the greatest common divisor of given numbers.'
+RULES = 'Find the greatest common divisor of given numbers.'
 
 
 def gcd(value1: int, value2: int) -> int:
@@ -40,4 +31,4 @@ def get_round() -> tuple:
     number1 = randint(1, MAX_NUMBER)
     number2 = randint(1, MAX_NUMBER)
     numbers = '{0} {1}'.format(number1, number2)
-    return (numbers, str(gcd(number1, number2)))
+    return numbers, str(gcd(number1, number2))

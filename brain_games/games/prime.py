@@ -3,21 +3,12 @@
 from random import randint
 
 MAX_NUMBER = 50
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def get_rules() -> str:
+def is_prime(number: int) -> bool:
     """
-    Return rules of the game.
-
-    Returns:
-        str
-    """
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
-
-def isprime(number: int) -> bool:
-    """
-    Predicate for check positive integers for prime numbers.
+    Predicate for checking positive integers for prime numbers.
 
     Args:
         number: integer for check
@@ -44,5 +35,5 @@ def get_round() -> tuple:
         tuple: question and right answer
     """
     number = randint(1, MAX_NUMBER)
-    right_answer = 'yes' if isprime(number) else 'no'
-    return (str(number), right_answer)
+    right_answer = 'yes' if is_prime(number) else 'no'
+    return str(number), right_answer

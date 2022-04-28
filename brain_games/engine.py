@@ -19,7 +19,7 @@ def get_useraname() -> str:
     return name
 
 
-def game_engine(game: ModuleType) -> str:
+def game_engine(game: ModuleType) -> None:
     """
     Game engine.
 
@@ -27,7 +27,7 @@ def game_engine(game: ModuleType) -> str:
         game: module
     """
     name = get_useraname()
-    print(game.get_rules())
+    print(game.RULES)
     for _ in range(ROUNDS_AMOUNT):
         question, right_answer = game.get_round()
         print('Question: {0}'.format(question))
